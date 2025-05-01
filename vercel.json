@@ -7,14 +7,6 @@
     },
     "routes": [
         {
-            "src": "resources/css/(.*)",
-            "dest": "../resources/css/(.*)"
-        },
-        {
-            "src": "resources/js/(.*)",
-            "dest": "../resources/js/(.*)"
-        },
-        {
             "src": "/(.*)",
             "dest": "/api/index.php"
         }
