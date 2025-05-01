@@ -7,16 +7,12 @@
     },
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/resources/css/app.css"
+            "src": "resources/css/(.*)",
+            "dest": "../resources/css/(.*)"
         },
         {
-            "src": "/(.*)",
-            "dest": "/resources/js/app.js"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/resources/js/bootstrap.js"
+            "src": "resources/js/(.*)",
+            "dest": "../resources/js/(.*)"
         },
         {
             "src": "/(.*)",
