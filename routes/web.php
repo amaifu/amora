@@ -20,3 +20,5 @@ Route::get('/layout/{id}', function ($id) {
 Route::post('/login', [AuthController::class, 'login']);
 
 Route::post('/register', [AuthController::class, 'register']);
+
+Route::get('/gettoken', [AuthController::class,'gettoken']);

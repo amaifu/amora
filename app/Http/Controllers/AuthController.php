@@ -37,5 +37,23 @@ class AuthController extends Controller {
 
         return response()->json(['message' => 'User registered successfully'], 201);    
     }
+
+    public function logout(Request $request) {
+        $user = User::where('id', $request->user_id)->first();
+
+        if (!$user) {
+            return response()->json(['message' => 'User not found'], 404);
+        }
+
+        $request->session()->destroy();
+
+        return response()->json(['message' => 'Logout successful'], 200);
+    }
+
+    public function getToken() {
+        $token = csrf_token();
+
+        return response()->json(['token' => $token], 200);
+    }
 }
    
