@@ -50,7 +50,7 @@ class AuthController extends Controller {
         return response()->json(['message' => 'Logout successful'], 200);
     }
 
-    public function getToken() {
+    public function gettoken() {
         $token = csrf_token();
 
         return response()->json(['token' => $token], 200);
