@@ -9,13 +9,13 @@ return Application::configure(basePath: dirname(__DIR__))
         web: __DIR__.'/../routes/web.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
-    )->create();
-    // ->withMiddleware(function (Middleware $middleware) {
-    //     $middleware->validateCsrfTokens(except: [
-    //         'https://amora-seven.vercel.app/login',
-    //         'https://amora-seven.vercel.app/register',
-    //     ]);
-    // })
-    // ->withExceptions(function (Exceptions $exceptions) {
+    )
+    ->withMiddleware(function (Middleware $middleware) {
+        $middleware->validateCsrfTokens(except: [
+            '*/login',
+            '*/register',
+        ]);
+    })
+    ->withExceptions(function (Exceptions $exceptions) {
 
-    // })->create();
+    })->create();
