@@ -11,8 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+            'https://amora-seven.vercel.app/login',
+            'https://amora-seven.vercel.app/register',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+
     })->create();
