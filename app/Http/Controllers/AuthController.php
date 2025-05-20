@@ -19,7 +19,7 @@ class AuthController extends Controller {
             return response()->json(['message' => 'Login successful', 'session_key' => str_shuffle($request->email . random_int(1000,9999))], 200);
         }
 
-        return response()->json(['message' => 'Invalid credentials'], 401);
+        return response()->json(['message' => 'Wrong username or password!'], 401);
     }
 
     public function register(Request $request) {
@@ -35,7 +35,7 @@ class AuthController extends Controller {
             'password' => bcrypt($validatedData['password']),
         ]);
 
-        return response()->json(['message' => 'User registered successfully'], 201);    
+        return response()->json(['message' => 'User registered successfully'], 200);    
     }
 
     public function logout(Request $request) {
