@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class OrderController extends Controller
 {
-    public function newOrder($request) {
+    public function newOrder(Request $request) {
         $order = new Order();
         $order->id_account = $request->id_account;
         $order->nickname = $request->nickname;
