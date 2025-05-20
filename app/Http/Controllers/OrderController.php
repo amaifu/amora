@@ -34,7 +34,7 @@ class OrderController extends Controller
     }
 
     public function getOrder($id) {
-        $order = Order::where("order_id", $id)->all();
+        $order = Order::where("order_id", "=", $id)->get();
 
         return response()->json(['orders' => $order], 200);
     }
