@@ -18,7 +18,7 @@ class OrderController extends Controller
         $order->pay_total = $request->pay_total;
         $order->save();
 
-        return response()->json(['message' => 'order created successfully'], 200);
+        return response()->json(['status' => 200 ,'message' => 'order created successfully'], 200);
     }
 
     public function updateOrder($id, Request $request) {
@@ -32,7 +32,7 @@ class OrderController extends Controller
         $order->pay_total = $request->pay_total;
         $order->save();
 
-        return response()->json(['message' => 'order updated successfully'], 200);
+        return response()->json(['status' => 200 ,'message' => 'order updated successfully'], 200);
     }
 
     public function getOrder($id) {

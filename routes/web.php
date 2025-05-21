@@ -31,6 +31,6 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/order/get', function() {
     return ["orders" => Order::all()];
 });
-Route::get('/order/get/{id}', [OrderController::class, 'getOrder']);
+Route::get('/order/{id}', [OrderController::class, 'getOrder']);
 Route::post('/order/create', [OrderController::class,'newOrder']);
 Route::post('/order/update/{id}', [OrderController::class,'updateOrder']);
