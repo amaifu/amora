@@ -16,7 +16,7 @@ Route::get('/', function () {
 //     return (["users" => User::all()]);
 // });
 Route::get('/layout/{id}', function ($id) {
-    return ["layouts" => Layout::select('')::where('game_id', '=', $id)->get()];
+    return ["layouts" => Layout::where('game_id', '=', $id)->get()];
 });
 
 Route::post('/login', [AuthController::class, 'login']);
