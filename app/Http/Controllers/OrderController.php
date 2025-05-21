@@ -11,6 +11,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->id_account = $request->id_account;
         $order->nickname = $request->nickname;
+        $order->item_info = $request->item_info;
         $order->payment_method = $request->payment_method;
         $order->pay_price = $request->pay_price;
         $order->pay_tax = $request->pay_tax;
@@ -24,6 +25,7 @@ class OrderController extends Controller
         $order = Order::find($id);
         $order->id_account = $request->id_account;
         $order->nickname = $request->nickname;
+        $order->item_info = $request->item_info;
         $order->payment_method = $request->payment_method;
         $order->pay_price = $request->pay_price;
         $order->pay_tax = $request->pay_tax;
